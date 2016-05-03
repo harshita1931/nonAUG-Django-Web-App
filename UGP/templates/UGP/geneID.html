@@ -1,0 +1,36 @@
+{% extends 'UGP/base.html' %}
+
+{% block content %}
+
+<h1><font face="georgia"> Non ATG Isoforms</font> </h1>
+<table border="1" style="width:100%">
+	<tr>
+		<th> <font face="georgia">Protein Accession ID</font> </th>
+		<th> <font face="georgia">Protein Name </font></th>
+	</tr>
+	{% for key, value in renderdict_nonATG.items %}
+	<tr>
+		<td> <a href="/proc_acc/{{ key }}"> <font face="georgia">{{ key }}</font> </a> </td>
+		<td> <font face="georgia">{{ value }}</font> </td>
+	</tr>
+	{% endfor %}
+</table>
+
+<h1><font face="georgia">ATG Isoforms</font> </h1>
+<table border="1" style="width:100%">
+	<tr>
+		<th> <font face="georgia">Protein Accession ID</font> </th>
+		<th><font face="georgia"> Protein Name </font></th>
+	</tr>
+	{% for key, value in renderdict_ATG.items %}
+	<tr>
+		<td> <a href="/proc_acc/{{ key }}"> <font face="georgia">{{ key }} </font></a> </td>
+		<td> <font face="georgia">{{ value }}</font> </td>
+	</tr>
+	{% endfor %}
+</table>
+<br>
+<br>
+<a href="/"><font face="georgia"> Back to Home </font></a>
+
+{% endblock %}

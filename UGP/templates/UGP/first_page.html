@@ -1,0 +1,55 @@
+{% extends 'UGP/base.html' %}
+
+{% block content %}
+
+    <!--<h1 align="center"><b><u> <font color="#009933" face="georgia">nonAUG Database</font></u></b> </h1> -->
+    <img src="/static/title1.jpg" alt="nonAUG Database" style="width:1000px;height:90px;" align="middle">
+
+    <table style="width:100% height: 100%">
+    	<tr>
+    		<td style="width:50%"> 
+    			<table>
+    				<tr>
+    					<td><a href="/browse"><font face="georgia"> Browse All Entries</font> </a></td>
+    				</tr>
+
+    				<tr>
+    					<td> <a href="/organism"> <font face="georgia">Search by Organism Name</font> </a></td>
+    				</tr>
+    				<br \>
+    				<tr>
+    					<td><a href="/proc_acc"> <font face="georgia">Search by Protein Accession ID </font></a></td>
+    				</tr>
+    			
+    				<tr>
+    					<td><a href="/geneID"><font face="georgia"> Search by Gene ID</font> </a></td>
+    				</tr>
+
+    				<tr>
+    					<td><a href="/stats"><font face="georgia"> Statistics</font> </a></td>
+    				</tr>
+
+    				<tr>
+    					<td><a href="/help"><font face="georgia"> Help</font> </a></td>
+    				</tr>
+                    <!--
+    				<tr>
+    					<td><a href="/geneID"> Contact Us </a></td>
+    				</tr>
+                    -->
+    			</table>
+
+    		</td>
+
+    		<td>
+    			<h3><font face="georgia"> <u>What is non AUG? </u></font></h3>
+    			<p><font face="georgia">Translation initiation using alternative codons is one of the important mechanisms by which single mRNA gives rise to multiple proteins. Several examples have been found in which mRNAs naturally support initiation from non-canonical codons. <b>nonAUG database</b> contains mRNA sequences with non-canonical start codons collected from RefSeq database. This database is the <b>second version</b> of the previously existing nonAUG database.</font> </p>
+    			<br>
+    			
+    		</td>
+
+    	</tr>
+
+    </table>
+    
+{% endblock %}

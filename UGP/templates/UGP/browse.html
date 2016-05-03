@@ -1,0 +1,25 @@
+{% extends 'UGP/base.html' %}
+
+{% block content %}
+
+<table border="1" style="width:100%">
+	<tr>
+		<th><font face="georgia"> Protein Accession ID</font> </th>
+		<th><font face="georgia"> Protein Name</font> </th>
+		<th> <font face="georgia">Organism Name</font></th>
+	</tr>
+	
+	{% for item in template_list %}
+	<tr>
+		<td> <a href="/proc_acc/{{ item.0 }}"> <font face="georgia">{{ item.0 }} </font></a> </td>
+		<td> <font face="georgia">{{ item.1 }}</font> </td>
+		<td><font face="georgia"> {{ item.2 }}</font> </td>
+	</tr>
+	{% endfor %}
+</table>
+<br>
+<br>
+<a href="/"><font face="georgia"> Back to Home </font></a>
+
+
+{% endblock %}

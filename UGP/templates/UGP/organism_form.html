@@ -1,0 +1,16 @@
+{% extends 'UGP/base.html' %}
+
+{% block content %}
+
+	<h1> <font face="georgia">Enter name of the organism </font></h1>
+	<form id="organism_form" method="post" action="/organism/dummy/">
+		{% csrf_token %}
+		<font face="georgia">Organism: </font><input type="text" name="organism" value="" size="50" /> 
+		<br />
+ 	<input type="submit" value="submit" />
+	</form>
+	<br>
+<br>
+<a href="/"><font face="georgia"> Back to Home </font></a>
+
+{% endblock %}

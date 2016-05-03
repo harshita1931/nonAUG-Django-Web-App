@@ -1,0 +1,43 @@
+{% extends 'UGP/base.html' %}
+
+{% block content %}
+
+<h2> <font color="#009933" face="georgia">Browsing nonAUG</font> </h2>
+<ul>
+<li> <font face="georgia">You can browse through all the entries present in the nonAUG database through this option </font></li>
+<li><font face="georgia">Link to details of each protein also provided</font></li>
+</ul>
+
+<br>
+<h2> <font color="#009933" face="georgia">Searching nonAUG </font></h2>
+<ul>
+ <li><font face="georgia"> nonAUG can be searched by name of organism or by NCBI gene ID or by NCBI protein accession ID</font> </li>
+ <li> <font face="georgia">The status of all the sequences present in this database is Reviewed</font> </li>
+</ul>
+
+<h2><font color="#009933" face="georgia"> Sequence Details</font> </h2>
+<font face="georgia">Sequences present in the database have following details associated with them :
+<ul>
+	<li><b> Name : </b> Name of the protein</li>
+	<li> <b>Protein Accession Number : </b> NCBI protein accession ID</li>
+	<li> <b>Organism name : </b>Name of the organism in which the protein is present</li>
+	<li> <b>Gene ID : </b> ID of the gene from which the protein is made</li>
+	<li><b>mRNA Accession ID : </b> NCBI Accession ID of the mRNA from which the protein is made</li>
+	<li><b>Status : </b>Curation of the sequene</li>
+	<li><b>Start Codon : </b>The start codon of the coding sequence for the protein</li>
+	<li><b>Upstream ATG count : </b> Number of occurances of ATG in the upstream region of the coding sequence</li>
+	<li><b>Description : </b>Description about the protein</li>
+	<li><b>Link to FASTA file : </b>Downloadable link for the protein sequence id FASTA format </li>
+</ul> 
+
+<h2><font color="#009933">Statistics</font></h2>
+<ul>
+	<li>Distribution of the organisms present in the database in terms of presence of non AUG codons is shown</li>
+	<li>Codon-wise classification for each non AUG codon for every organism present in database is shown</li>
+</ul>
+</font>
+
+<br>
+<br>
+<a href="/"><font face="georgia"> Back to Home </font></a>
+{% endblock %}
