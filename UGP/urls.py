@@ -32,7 +32,7 @@ urlpatterns = [
 
     url(r'^proc_acc_bacteria/$', views.proc_acc_form_bacteria, name='proc_acc_form_bacteriaURL'),
     url(r'^proc_acc_bacteria/dummy/$', views.dummy_view_proc_acc_bacteria, name='dummy_view_proc_acc_bacteriaURL'),    
-    url(r'^proc_acc_bacteria/(?P<proc_acc_num>\w+\.\w+)/$', views.proc_acc_bacteria, name='proc_acc_bacteriaURL'), #it's not working.. see it
+    url(r'^proc_acc_bacteria/(?P<proc_acc_num>\w+\.\w+)/$', views.proc_acc_bacteria, name='proc_acc_bacteriaURL'),
 
     url(r'^organism_bacteria/$', views.organism_form_bacteria, name='organism_form_bacteriaURL'),
     url(r'^organism_bacteria/dummy/$', views.dummy_view_bacteria, name='dummy_view_bacteriaURL'),
