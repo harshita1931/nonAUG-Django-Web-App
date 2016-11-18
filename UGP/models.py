@@ -28,4 +28,17 @@ class MainTable(models.Model):
     def __str__(self):
         return self.s_no  
 
+class BacteriaTable(models.Model):
+    chrom_acc_num = models.CharField(max_length=200, default="-")
+    organism = models.CharField(max_length=200, default="-")
+    CDSstart = models.IntegerField()
+    CDSend = models.IntegerField()
+    strand = models.IntegerField()
+    startcodon = models.CharField(max_length=200, default="-")
+    prot_acc = models.CharField(max_length=200, default="-")
+    prot_description = models.TextField(default='-', null=True, blank=True)
+    locus_tag = models.CharField(max_length=200, default="-")
+    sequence = models.TextField(default='-', null=True, blank=True)
 
+    def __str__(self):
+        return self.s_no 

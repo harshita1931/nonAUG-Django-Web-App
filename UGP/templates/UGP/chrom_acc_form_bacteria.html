@@ -1,0 +1,16 @@
+{% extends 'UGP/base.html' %}
+
+{% block content %}
+
+	<h1> <font face="georgia">Enter Chromosome Accession </font></h1>
+	<form id="chrom_acc_form" method="post" action="/chrom_acc_bacteria/dummy/">
+		{% csrf_token %}
+		<font face="georgia">Chromosome Accession ID:</font> <input type="text" name="chrom_acc" value="" size="50" /> 
+		<br />
+ 	<input type="submit" value="submit" />
+	</form>
+	<br>
+<br>
+<a href="/"><font face="georgia"> Back to Home </font></a>
+
+{% endblock %}

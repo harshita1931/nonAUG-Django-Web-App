@@ -1,0 +1,21 @@
+{% extends 'UGP/base.html' %}
+
+{% block content %}
+
+<table border="1" style="width:100%">
+	<tr>
+		<th> <font face="georgia">Organism</font> </th>
+		<th> <font face="georgia">Protein Accession ID </font></th>
+	</tr>
+	{% for key, value in renderdict.items %}
+	<tr>
+		<td> <font face="georgia">{{ value|first }}</font> </td>
+		<td> <a href="/proc_acc_bacteria/{{ value|last }}"> <font face="georgia">{{ value|last }}</font> </a> </td>
+	</tr>
+	{% endfor %}
+</table>
+<br>
+<br>
+<a href="/"><font face="georgia"> Back to Home </font></a>
+
+{% endblock %}

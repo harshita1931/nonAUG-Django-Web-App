@@ -1,0 +1,54 @@
+{% extends 'UGP/base.html' %}
+
+{% block content %}
+
+    <!--<h1 align="center"><b><u> <font color="#009933" face="georgia">nonAUG Database</font></u></b> </h1> -->
+    <!-- <img src="/static/title1.jpg" alt="nonAUG Database" style="width:1000px;height:90px;" align="middle"> -->
+
+    <table style="width:100% height: 100%">
+    	<tr>
+    		<td style="width:50%"> 
+    			<table>
+    				<tr>
+    					<td><a href="/browse_bacteria"><font face="georgia"> Browse All Entries</font> </a></td>
+    				</tr>
+
+    				<tr>
+    					<td> <a href="/organism_bacteria"> <font face="georgia">Search by Organism Name</font> </a></td>
+    				</tr>
+    				<br \>
+    				<tr>
+    					<td><a href="/proc_acc_bacteria"> <font face="georgia">Search by Protein Accession ID </font></a></td>
+    				</tr>
+
+                    <tr>
+                        <td><a href="/chrom_acc_bacteria"> <font face="georgia">Search by Chromosome Accession ID </font></a></td>
+                    </tr>
+    				<tr>
+    					<td><a href="/stats_bacteria"><font face="georgia"> Statistics</font> </a></td>
+    				</tr>
+
+    				<tr>
+    					<td><a href="/help_bacteria"><font face="georgia"> Help</font> </a></td>
+    				</tr>
+    			</table>
+
+    		</td>
+
+    		<td>
+    			<h3><font face="georgia"><p style="text-align:center"> <u>Bacteria </u> </p></font></h3>
+                <p><img src="/static/bacteria.jpg" alt="Bacteria" style="width:400px;height:350px;" align="right"> </p>
+                
+    			<br>
+    			
+    		</td>
+
+    	</tr>
+
+    </table>
+
+<br>
+<br>
+<a href="/"><font face="georgia"> Back to Home </font></a>    
+    
+{% endblock %}
