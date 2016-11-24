@@ -29,6 +29,7 @@ urlpatterns = [
     url(r'^bacteria/$',views.first_page_bacteria, name='first_page_bacteriaURL'),
 
     url(r'^browse_bacteria/$', views.browse_bacteria, name='browse_bacteriaURL'),
+    url(r'^browse_name_bacteria/$', views.browse_name_bacteria, name='browse_name_bacteriaURL'),
 
     url(r'^proc_acc_bacteria/$', views.proc_acc_form_bacteria, name='proc_acc_form_bacteriaURL'),
     url(r'^proc_acc_bacteria/dummy/$', views.dummy_view_proc_acc_bacteria, name='dummy_view_proc_acc_bacteriaURL'),    

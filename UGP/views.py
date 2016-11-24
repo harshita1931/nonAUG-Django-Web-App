@@ -77,7 +77,6 @@ def dummy_view_bacteria(request):
 	return HttpResponseRedirect(url)
 
 
-
 def dummy_view_proc_acc(request):
 	proc_acc_num = request.POST.get('proc_acc', False)
 	url = '/proc_acc/'+str(proc_acc_num)+'/'
@@ -373,6 +372,375 @@ def browse_bacteria(request):
 	for i in xrange(size):
 		template_list.append((organism_name_list[i], prot_acc_list[i], prot_description_list[i], chrom_acc_list[i]))
 	return render(request, 'UGP/browse_bacteria.html', {'template_list': template_list})
+
+
+def browse_name_bacteria(request):
+	Alist = BacteriaTable.objects.filter(organism__startswith = 'A').values('organism').distinct()
+	Blist = BacteriaTable.objects.filter(organism__startswith = 'B').values('organism').distinct()
+	Clist = BacteriaTable.objects.filter(organism__startswith = 'C').values('organism').distinct()
+	Dlist = BacteriaTable.objects.filter(organism__startswith = 'D').values('organism').distinct()
+	Elist = BacteriaTable.objects.filter(organism__startswith = 'E').values('organism').distinct()
+	Flist = BacteriaTable.objects.filter(organism__startswith = 'F').values('organism').distinct()
+	Glist = BacteriaTable.objects.filter(organism__startswith = 'G').values('organism').distinct()
+	Hlist = BacteriaTable.objects.filter(organism__startswith = 'H').values('organism').distinct()
+	Ilist = BacteriaTable.objects.filter(organism__startswith = 'I').values('organism').distinct()
+	Jlist = BacteriaTable.objects.filter(organism__startswith = 'J').values('organism').distinct()
+	Klist = BacteriaTable.objects.filter(organism__startswith = 'K').values('organism').distinct()
+	Llist = BacteriaTable.objects.filter(organism__startswith = 'L').values('organism').distinct()
+	Mlist = BacteriaTable.objects.filter(organism__startswith = 'M').values('organism').distinct()
+	Nlist = BacteriaTable.objects.filter(organism__startswith = 'N').values('organism').distinct()
+	Olist = BacteriaTable.objects.filter(organism__startswith = 'O').values('organism').distinct()
+	Plist = BacteriaTable.objects.filter(organism__startswith = 'P').values('organism').distinct()
+	Qlist = BacteriaTable.objects.filter(organism__startswith = 'Q').values('organism').distinct()
+	Rlist = BacteriaTable.objects.filter(organism__startswith = 'R').values('organism').distinct()
+	Slist = BacteriaTable.objects.filter(organism__startswith = 'S').values('organism').distinct()
+	Tlist = BacteriaTable.objects.filter(organism__startswith = 'T').values('organism').distinct()
+	Ulist = BacteriaTable.objects.filter(organism__startswith = 'U').values('organism').distinct()
+	Vlist = BacteriaTable.objects.filter(organism__startswith = 'V').values('organism').distinct()
+	Wlist = BacteriaTable.objects.filter(organism__startswith = 'W').values('organism').distinct()
+	Xlist = BacteriaTable.objects.filter(organism__startswith = 'X').values('organism').distinct()
+	Ylist = BacteriaTable.objects.filter(organism__startswith = 'Y').values('organism').distinct()
+	Zlist = BacteriaTable.objects.filter(organism__startswith = 'Z').values('organism').distinct()
+
+	Adict = {}
+	for i in range(0, len(Alist)) :
+		templist = []
+		name = str(Alist[i]['organism'])
+		splitlist = name.split(" ")
+		if splitlist[0][0] == '[' :
+			splitlist[0] = splitlist[0][1:]
+		if splitlist[1][-1] == ']' :
+			splitlist[1] = 	splitlist[1][:-1]			
+		finalname = splitlist[0] + " " + splitlist[1]
+		finalurlname = splitlist[0]+"_"+splitlist[1]
+		Adict[finalname] = finalurlname
+
+	Bdict = {}
+	for i in range(0, len(Blist)) :
+		templist = []
+		name = str(Blist[i]['organism'])
+		splitlist = name.split(" ")
+		if splitlist[0][0] == '[' :
+			splitlist[0] = splitlist[0][1:]
+		if splitlist[1][-1] == ']' :
+			splitlist[1] = 	splitlist[1][:-1]			
+		finalname = splitlist[0] + " " + splitlist[1]
+		finalurlname = splitlist[0]+"_"+splitlist[1]
+		Bdict[finalname] = finalurlname
+
+	Cdict = {}
+	for i in range(0, len(Clist)) :
+		templist = []
+		name = str(Clist[i]['organism'])
+		splitlist = name.split(" ")
+		if splitlist[0][0] == '[' :
+			splitlist[0] = splitlist[0][1:]
+		if splitlist[1][-1] == ']' :
+			splitlist[1] = 	splitlist[1][:-1]			
+		finalname = splitlist[0] + " " + splitlist[1]
+		finalurlname = splitlist[0]+"_"+splitlist[1]
+		Cdict[finalname] = finalurlname
+		
+	Ddict = {}
+	for i in range(0, len(Dlist)) :
+		templist = []
+		name = str(Dlist[i]['organism'])
+		splitlist = name.split(" ")
+		if splitlist[0][0] == '[' :
+			splitlist[0] = splitlist[0][1:]
+		if splitlist[1][-1] == ']' :
+			splitlist[1] = 	splitlist[1][:-1]			
+		finalname = splitlist[0] + " " + splitlist[1]
+		finalurlname = splitlist[0]+"_"+splitlist[1]
+		Ddict[finalname] = finalurlname
+		
+	Edict = {}
+	for i in range(0, len(Elist)) :
+		templist = []
+		name = str(Elist[i]['organism'])
+		splitlist = name.split(" ")
+		if splitlist[0][0] == '[' :
+			splitlist[0] = splitlist[0][1:]
+		if splitlist[1][-1] == ']' :
+			splitlist[1] = 	splitlist[1][:-1]			
+		finalname = splitlist[0] + " " + splitlist[1]
+		finalurlname = splitlist[0]+"_"+splitlist[1]
+		Edict[finalname] = finalurlname
+		
+	Fdict = {}
+	for i in range(0, len(Flist)) :
+		templist = []
+		name = str(Flist[i]['organism'])
+		splitlist = name.split(" ")
+		if splitlist[0][0] == '[' :
+			splitlist[0] = splitlist[0][1:]
+		if splitlist[1][-1] == ']' :
+			splitlist[1] = 	splitlist[1][:-1]			
+		finalname = splitlist[0] + " " + splitlist[1]
+		finalurlname = splitlist[0]+"_"+splitlist[1]
+		Fdict[finalname] = finalurlname
+		
+	Gdict = {}
+	for i in range(0, len(Glist)) :
+		templist = []
+		name = str(Glist[i]['organism'])
+		splitlist = name.split(" ")
+		if splitlist[0][0] == '[' :
+			splitlist[0] = splitlist[0][1:]
+		if splitlist[1][-1] == ']' :
+			splitlist[1] = 	splitlist[1][:-1]			
+		finalname = splitlist[0] + " " + splitlist[1]
+		finalurlname = splitlist[0]+"_"+splitlist[1]
+		Gdict[finalname] = finalurlname
+		
+	Hdict = {}
+	for i in range(0, len(Hlist)) :
+		templist = []
+		name = str(Hlist[i]['organism'])
+		splitlist = name.split(" ")
+		if splitlist[0][0] == '[' :
+			splitlist[0] = splitlist[0][1:]
+		if splitlist[1][-1] == ']' :
+			splitlist[1] = 	splitlist[1][:-1]			
+		finalname = splitlist[0] + " " + splitlist[1]
+		finalurlname = splitlist[0]+"_"+splitlist[1]
+		Hdict[finalname] = finalurlname
+		
+	Idict = {}
+	for i in range(0, len(Ilist)) :
+		templist = []
+		name = str(Ilist[i]['organism'])
+		splitlist = name.split(" ")
+		if splitlist[0][0] == '[' :
+			splitlist[0] = splitlist[0][1:]
+		if splitlist[1][-1] == ']' :
+			splitlist[1] = 	splitlist[1][:-1]			
+		finalname = splitlist[0] + " " + splitlist[1]
+		finalurlname = splitlist[0]+"_"+splitlist[1]
+		Idict[finalname] = finalurlname
+		
+	Jdict = {}
+	for i in range(0, len(Jlist)) :
+		templist = []
+		name = str(Jlist[i]['organism'])
+		splitlist = name.split(" ")
+		if splitlist[0][0] == '[' :
+			splitlist[0] = splitlist[0][1:]
+		if splitlist[1][-1] == ']' :
+			splitlist[1] = 	splitlist[1][:-1]			
+		finalname = splitlist[0] + " " + splitlist[1]
+		finalurlname = splitlist[0]+"_"+splitlist[1]
+		Jdict[finalname] = finalurlname
+		
+	Kdict = {}
+	for i in range(0, len(Klist)) :
+		templist = []
+		name = str(Klist[i]['organism'])
+		splitlist = name.split(" ")
+		if splitlist[0][0] == '[' :
+			splitlist[0] = splitlist[0][1:]
+		if splitlist[1][-1] == ']' :
+			splitlist[1] = 	splitlist[1][:-1]			
+		finalname = splitlist[0] + " " + splitlist[1]
+		finalurlname = splitlist[0]+"_"+splitlist[1]
+		Kdict[finalname] = finalurlname
+		
+	Ldict = {}
+	for i in range(0, len(Llist)) :
+		templist = []
+		name = str(Llist[i]['organism'])
+		splitlist = name.split(" ")
+		if splitlist[0][0] == '[' :
+			splitlist[0] = splitlist[0][1:]
+		if splitlist[1][-1] == ']' :
+			splitlist[1] = 	splitlist[1][:-1]			
+		finalname = splitlist[0] + " " + splitlist[1]
+		finalurlname = splitlist[0]+"_"+splitlist[1]
+		Ldict[finalname] = finalurlname
+		
+	Mdict = {}
+	for i in range(0, len(Mlist)) :
+		templist = []
+		name = str(Mlist[i]['organism'])
+		splitlist = name.split(" ")
+		if splitlist[0][0] == '[' :
+			splitlist[0] = splitlist[0][1:]
+		if splitlist[1][-1] == ']' :
+			splitlist[1] = 	splitlist[1][:-1]			
+		finalname = splitlist[0] + " " + splitlist[1]
+		finalurlname = splitlist[0]+"_"+splitlist[1]
+		Mdict[finalname] = finalurlname
+		
+	Ndict = {}
+	for i in range(0, len(Nlist)) :
+		templist = []
+		name = str(Nlist[i]['organism'])
+		splitlist = name.split(" ")
+		if splitlist[0][0] == '[' :
+			splitlist[0] = splitlist[0][1:]
+		if splitlist[1][-1] == ']' :
+			splitlist[1] = 	splitlist[1][:-1]			
+		finalname = splitlist[0] + " " + splitlist[1]
+		finalurlname = splitlist[0]+"_"+splitlist[1]
+		Ndict[finalname] = finalurlname
+		
+	Odict = {}
+	for i in range(0, len(Olist)) :
+		templist = []
+		name = str(Olist[i]['organism'])
+		splitlist = name.split(" ")
+		if splitlist[0][0] == '[' :
+			splitlist[0] = splitlist[0][1:]
+		if splitlist[1][-1] == ']' :
+			splitlist[1] = 	splitlist[1][:-1]			
+		finalname = splitlist[0] + " " + splitlist[1]
+		finalurlname = splitlist[0]+"_"+splitlist[1]
+		Odict[finalname] = finalurlname
+		
+	Pdict = {}
+	for i in range(0, len(Plist)) :
+		templist = []
+		name = str(Plist[i]['organism'])
+		splitlist = name.split(" ")
+		if splitlist[0][0] == '[' :
+			splitlist[0] = splitlist[0][1:]
+		if splitlist[1][-1] == ']' :
+			splitlist[1] = 	splitlist[1][:-1]			
+		finalname = splitlist[0] + " " + splitlist[1]
+		finalurlname = splitlist[0]+"_"+splitlist[1]
+		Pdict[finalname] = finalurlname
+		
+	Qdict = {}
+	for i in range(0, len(Qlist)) :
+		templist = []
+		name = str(Qlist[i]['organism'])
+		splitlist = name.split(" ")
+		if splitlist[0][0] == '[' :
+			splitlist[0] = splitlist[0][1:]
+		if splitlist[1][-1] == ']' :
+			splitlist[1] = 	splitlist[1][:-1]			
+		finalname = splitlist[0] + " " + splitlist[1]
+		finalurlname = splitlist[0]+"_"+splitlist[1]
+		Qdict[finalname] = finalurlname
+		
+	Rdict = {}
+	for i in range(0, len(Rlist)) :
+		templist = []
+		name = str(Rlist[i]['organism'])
+		splitlist = name.split(" ")
+		if splitlist[0][0] == '[' :
+			splitlist[0] = splitlist[0][1:]
+		if splitlist[1][-1] == ']' :
+			splitlist[1] = 	splitlist[1][:-1]			
+		finalname = splitlist[0] + " " + splitlist[1]
+		finalurlname = splitlist[0]+"_"+splitlist[1]
+		Rdict[finalname] = finalurlname
+		
+	Sdict = {}
+	for i in range(0, len(Slist)) :
+		templist = []
+		name = str(Slist[i]['organism'])
+		splitlist = name.split(" ")
+		if splitlist[0][0] == '[' :
+			splitlist[0] = splitlist[0][1:]
+		if splitlist[1][-1] == ']' :
+			splitlist[1] = 	splitlist[1][:-1]			
+		finalname = splitlist[0] + " " + splitlist[1]
+		finalurlname = splitlist[0]+"_"+splitlist[1]
+		Sdict[finalname] = finalurlname
+		
+	Tdict = {}
+	for i in range(0, len(Tlist)) :
+		templist = []
+		name = str(Tlist[i]['organism'])
+		splitlist = name.split(" ")
+		if splitlist[0][0] == '[' :
+			splitlist[0] = splitlist[0][1:]
+		if splitlist[1][-1] == ']' :
+			splitlist[1] = 	splitlist[1][:-1]			
+		finalname = splitlist[0] + " " + splitlist[1]
+		finalurlname = splitlist[0]+"_"+splitlist[1]
+		Tdict[finalname] = finalurlname
+		
+	Udict = {}
+	for i in range(0, len(Ulist)) :
+		templist = []
+		name = str(Ulist[i]['organism'])
+		splitlist = name.split(" ")
+		if splitlist[0][0] == '[' :
+			splitlist[0] = splitlist[0][1:]
+		if splitlist[1][-1] == ']' :
+			splitlist[1] = 	splitlist[1][:-1]			
+		finalname = splitlist[0] + " " + splitlist[1]
+		finalurlname = splitlist[0]+"_"+splitlist[1]
+		Udict[finalname] = finalurlname
+		
+	Vdict = {}
+	for i in range(0, len(Vlist)) :
+		templist = []
+		name = str(Vlist[i]['organism'])
+		splitlist = name.split(" ")
+		if splitlist[0][0] == '[' :
+			splitlist[0] = splitlist[0][1:]
+		if splitlist[1][-1] == ']' :
+			splitlist[1] = 	splitlist[1][:-1]			
+		finalname = splitlist[0] + " " + splitlist[1]
+		finalurlname = splitlist[0]+"_"+splitlist[1]
+		Vdict[finalname] = finalurlname
+		
+	Wdict = {}
+	for i in range(0, len(Wlist)) :
+		templist = []
+		name = str(Wlist[i]['organism'])
+		splitlist = name.split(" ")
+		if splitlist[0][0] == '[' :
+			splitlist[0] = splitlist[0][1:]
+		if splitlist[1][-1] == ']' :
+			splitlist[1] = 	splitlist[1][:-1]			
+		finalname = splitlist[0] + " " + splitlist[1]
+		finalurlname = splitlist[0]+"_"+splitlist[1]
+		Wdict[finalname] = finalurlname
+		
+	Xdict = {}
+	for i in range(0, len(Xlist)) :
+		templist = []
+		name = str(Xlist[i]['organism'])
+		splitlist = name.split(" ")
+		if splitlist[0][0] == '[' :
+			splitlist[0] = splitlist[0][1:]
+		if splitlist[1][-1] == ']' :
+			splitlist[1] = 	splitlist[1][:-1]			
+		finalname = splitlist[0] + " " + splitlist[1]
+		finalurlname = splitlist[0]+"_"+splitlist[1]
+		Xdict[finalname] = finalurlname
+		
+	Ydict = {}
+	for i in range(0, len(Ylist)) :
+		templist = []
+		name = str(Ylist[i]['organism'])
+		splitlist = name.split(" ")
+		if splitlist[0][0] == '[' :
+			splitlist[0] = splitlist[0][1:]
+		if splitlist[1][-1] == ']' :
+			splitlist[1] = 	splitlist[1][:-1]			
+		finalname = splitlist[0] + " " + splitlist[1]
+		finalurlname = splitlist[0]+"_"+splitlist[1]
+		Ydict[finalname] = finalurlname
+		
+	Zdict = {}
+	for i in range(0, len(Zlist)) :
+		templist = []
+		name = str(Zlist[i]['organism'])
+		splitlist = name.split(" ")
+		if splitlist[0][0] == '[' :
+			splitlist[0] = splitlist[0][1:]
+		if splitlist[1][-1] == ']' :
+			splitlist[1] = 	splitlist[1][:-1]			
+		finalname = splitlist[0] + " " + splitlist[1]
+		finalurlname = splitlist[0]+"_"+splitlist[1]
+		Zdict[finalname] = finalurlname																								
+
+	return render(request, 'UGP/browse_name_bacteria.html', {'Adict': Adict, 'Bdict':Bdict, 'Cdict': Cdict, 'Ddict': Ddict, 'Edict': Edict, 'Fdict': Fdict, 'Gdict': Gdict, 'Hdict': Hdict, 'Idict': Idict, 'Jdict': Jdict, 'Kdict': Kdict, 'Ldict': Ldict, 'Mdict': Mdict, 'Ndict': Ndict, 'Odict': Odict, 'Pdict': Pdict, 'Qdict': Qdict, 'Rdict': Rdict, 'Sdict': Sdict, 'Tdict': Tdict, 'Udict': Udict, 'Vdict': Vdict, 'Wdict': Wdict, 'Xdict': Xdict, 'Ydict': Ydict, 'Zdict': Zdict})
 
 	
 
