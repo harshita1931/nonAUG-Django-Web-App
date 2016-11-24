@@ -19,10 +19,33 @@ def first_page_bacteria(request):
 		
 
 def organism_form(request):
-	return render(request, 'UGP/organism_form.html', {})
+	organism_name_list = MainTable.objects.all().values('organism').distinct()
+	org_name = []
+	for i in range(0, len(organism_name_list)) :
+		name = str(organism_name_list[i]['organism'])
+		splitlist = name.split(" ")
+		finalname = splitlist[0] + " " + splitlist[1]
+		org_name.append(finalname)
+
+	org_name = list(set(org_name))	
+	return render(request, 'UGP/organism_form.html', {'org_name':org_name})
 
 def organism_form_bacteria(request):
-	return render(request, 'UGP/organism_form_bacteria.html', {})	
+	organism_name_list = BacteriaTable.objects.all().values('organism').distinct()
+	org_name = []
+	for i in range(0, len(organism_name_list)) :
+		name = str(organism_name_list[i]['organism'])
+		splitlist = name.split(" ")
+		if splitlist[0][0] == '[' :
+			splitlist[0] = splitlist[0][1:]
+		if splitlist[1][-1] == ']' :
+			splitlist[1] = 	splitlist[1][:-1]
+			
+		finalname = splitlist[0] + " " + splitlist[1]
+		org_name.append(finalname)
+
+	org_name = list(set(org_name))	
+	return render(request, 'UGP/organism_form_bacteria.html', {'org_name':org_name})	
 
 
 def proc_acc_form(request):
