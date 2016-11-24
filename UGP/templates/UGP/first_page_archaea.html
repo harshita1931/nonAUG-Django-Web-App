@@ -1,0 +1,55 @@
+{% extends 'UGP/base.html' %}
+
+{% block content %}
+
+    <table style="width:100% height: 100%">
+    	<tr>
+    		<td style="width:50%"> 
+    			<table>
+    				<!-- <tr>
+    					<td><a href="/browse_archaea"><font face="georgia"> Browse All Entries</font> </a></td>
+    				</tr> -->
+
+                    <tr>
+                        <td><a href="/browse_name_archaea"><font face="georgia"> Browse by Organism Name</font> </a></td>
+                    </tr>
+
+    				<tr>
+    					<td> <a href="/organism_archaea"> <font face="georgia">Search by Organism Name</font> </a></td>
+    				</tr>
+    				<br \>
+    				<tr>
+    					<td><a href="/proc_acc_archaea"> <font face="georgia">Search by Protein Accession ID </font></a></td>
+    				</tr>
+
+                    <tr>
+                        <td><a href="/chrom_acc_archaea"> <font face="georgia">Search by Chromosome Accession ID </font></a></td>
+                    </tr>
+    				<tr>
+    					<td><a href="/stats_archaea"><font face="georgia"> Statistics</font> </a></td>
+    				</tr>
+
+    				<tr>
+    					<td><a href="/help_archaea"><font face="georgia"> Help</font> </a></td>
+    				</tr>
+    			</table>
+
+    		</td>
+
+    		<td>
+    			<h3><font face="georgia"><p style="text-align:center"> <u>Archaea </u> </p></font></h3>
+                <p><img src="/static/archaea.jpg" alt="archaea" style="width:400px;height:350px;" align="right"> </p>
+                
+    			<br>
+    			
+    		</td>
+
+    	</tr>
+
+    </table>
+
+<br>
+<br>
+<a href="/"><font face="georgia"> Back to Home </font></a>    
+    
+{% endblock %}

@@ -43,4 +43,23 @@ urlpatterns = [
     url(r'^chrom_acc_bacteria/dummy/$', views.dummy_view_chrom_acc_bacteria, name='dummy_view_chrom_acc_bacteriaURL'),    
     url(r'^chrom_acc_bacteria/(?P<chrom_acc_num>\w+\.\w+)/$', views.chrom_acc_bacteria, name='chrom_acc_bacteriaURL'), 
 
+
+    # urls for archaea
+    url(r'^archaea/$',views.first_page_archaea, name='first_page_archaeaURL'),
+
+    url(r'^browse_archaea/$', views.browse_archaea, name='browse_archaeaURL'),
+    url(r'^browse_name_archaea/$', views.browse_name_archaea, name='browse_name_archaeaURL'),
+
+    url(r'^proc_acc_archaea/$', views.proc_acc_form_archaea, name='proc_acc_form_archaeaURL'),
+    url(r'^proc_acc_archaea/dummy/$', views.dummy_view_proc_acc_archaea, name='dummy_view_proc_acc_archaeaURL'),    
+    url(r'^proc_acc_archaea/(?P<proc_acc_num>\w+\.\w+)/$', views.proc_acc_archaea, name='proc_acc_archaeaURL'),
+
+    url(r'^organism_archaea/$', views.organism_form_archaea, name='organism_form_archaeaURL'),
+    url(r'^organism_archaea/dummy/$', views.dummy_view_archaea, name='dummy_view_archaeaURL'),
+    url(r'^organism_archaea/(?P<org_name>\w+)/$', views.organism_archaea, name='organism_archaeaURL' ),
+
+    url(r'^chrom_acc_archaea/$', views.chrom_acc_form_archaea, name='chrom_acc_form_archaeaURL'),
+    url(r'^chrom_acc_archaea/dummy/$', views.dummy_view_chrom_acc_archaea, name='dummy_view_chrom_acc_archaeaURL'),    
+    url(r'^chrom_acc_archaea/(?P<chrom_acc_num>\w+\.\w+)/$', views.chrom_acc_archaea, name='chrom_acc_archaeaURL'), 
+
 ]

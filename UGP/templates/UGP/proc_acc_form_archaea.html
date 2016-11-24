@@ -1,0 +1,17 @@
+{% extends 'UGP/base.html' %}
+
+{% block content %}
+
+	<h1> <font face="georgia">Enter Protein Accession </font></h1>
+	<form id="proc_acc_form" method="post" action="/proc_acc_archaea/dummy/">
+		{% csrf_token %}
+		<font face="georgia">Protein Accession ID:</font> <input type="text" name="proc_acc" value="" size="50" /> 
+		<br />
+		<br>
+ 	<input type="submit" value="submit" class="btn btn-success"/>
+	</form>
+	<br>
+<br>
+<a href="/"><font face="georgia"> Back to Home </font></a>
+
+{% endblock %}
