@@ -2,49 +2,52 @@
 
 {% block content %}
 
-<table border="1" style="width:100%">
-	<tr>
-		<td style="width:30%"><font face="georgia"> Organism Name</font> </td>
-		<td> <font face="georgia">{{ prot_name_list.0 }} </font></td>
-	</tr>
-	<tr>
-		<td> <font face="georgia">Protein Accession Number</font> </td>
-		<td><font face="georgia"> {{ prot_name_list.1 }} </font></td>
-	</tr>
-	<tr>
-		<td><font face="georgia">  Protein Description</font></td>
-		<td> <font face="georgia">{{ prot_name_list.3 }} </font></td>
-	</tr>
-	<tr>
-		<td><font face="georgia"> Chromosome Accession Number</font> </td>
-		<td> <a href="/chrom_acc_bacteria/{{ prot_name_list.2 }}"><font face="georgia">{{ prot_name_list.2 }}</font> </td> 
-	</tr>
-	<tr>
-		<td><font face="georgia"> CDS Start </font> </td>
-		<td> <font face="georgia">{{ prot_name_list.4 }} </font></td>
-	</tr>
-	<tr>
-		<td> <font face="georgia">CDS End</font> </td>
-		<td> <font face="georgia">{{ prot_name_list.5 }}</font> </td>
-	</tr>
-	<tr>
-		<td><font face="georgia"> Strand </font> </td>
-		<td> <font face="georgia">{{ prot_name_list.6 }} </font></td>
-	</tr>
-	<tr>
-		<td> <font face="georgia">Start Codon</font> </td>
-		<td><font face="georgia"> {{ prot_name_list.7 }}</font> </td>
-	</tr>
-	<tr>
-		<td><font face="georgia"> Locus Tag</font> </td>
-		<td> <font face="georgia">{{ prot_name_list.8 }}</font> </td>
-	</tr>
-	<tr>
-		<td> <font face="georgia">Protein Sequence </font> </td>
-		<td> <font face="georgia"> {{ prot_name_list.9 }}</font> </td>
-	</tr>
-</table>
-<br>
+
+{% for protinfo in prot_name_list %}
+	<table border="1" style="width:100%">
+		<tr>
+			<td style="width:30%"><font face="georgia"> Organism Name</font> </td>
+			<td> <font face="georgia">{{ protinfo.0 }} </font></td>
+		</tr>
+		<tr>
+			<td> <font face="georgia">Protein Accession Number</font> </td>
+			<td><font face="georgia"> {{ protinfo.1 }} </font></td>
+		</tr>
+		<tr>
+			<td><font face="georgia">  Protein Description</font></td>
+			<td> <font face="georgia">{{ protinfo.3 }} </font></td>
+		</tr>
+		<tr>
+			<td><font face="georgia"> Chromosome Accession Number</font> </td>
+			<td> <a href="/chrom_acc_bacteria/{{ protinfo.2 }}"><font face="georgia">{{ protinfo.2 }}</font> </td>
+		</tr>
+		<tr>
+			<td><font face="georgia"> CDS Start </font> </td>
+			<td> <font face="georgia">{{ protinfo.4 }} </font></td>
+		</tr>
+		<tr>
+			<td> <font face="georgia">CDS End</font> </td>
+			<td> <font face="georgia">{{ protinfo.5 }}</font> </td>
+		</tr>
+		<tr>
+			<td><font face="georgia"> Strand </font> </td>
+			<td> <font face="georgia">{{ protinfo.6 }} </font></td>
+		</tr>
+		<tr>
+			<td> <font face="georgia">Start Codon</font> </td>
+			<td><font face="georgia"> {{ protinfo.7 }}</font> </td>
+		</tr>
+		<tr>
+			<td><font face="georgia"> Locus Tag</font> </td>
+			<td> <font face="georgia">{{ protinfo.8 }}</font> </td>
+		</tr>
+		<tr>
+			<td> <font face="georgia">Protein Sequence </font> </td>
+			<td> <font face="georgia"> {{ protinfo.9 }}</font> </td>
+		</tr>
+	</table>
+	<br>
+{% endfor %}
 <br>
 <a href="/"><font face="georgia"> Back to Home </font></a>
 

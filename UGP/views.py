@@ -197,31 +197,21 @@ def proc_acc_bacteria(request, proc_acc_num):
 	locus_tag = BacteriaTable.objects.all().filter(prot_acc = proc_acc_num).values('locus_tag')
 	sequence = BacteriaTable.objects.all().filter(prot_acc = proc_acc_num).values('sequence')
 
-	temp = []
+	prot_name_list = []
 
-	for val in organism:
-		temp.append(str(val['organism']))
-	
-	temp.append(proc_acc_num)
-
-	for val in chrom_acc_num:
-		temp.append(str(val['chrom_acc_num']))
-	for val in prot_description_list:
-		temp.append(str(val['prot_description']))
-	for val in CDSstart:
-		temp.append(str(val['CDSstart']))
-	for val in CDSend:
-		temp.append(str(val['CDSend']))
-	for val in strand:
-		temp.append(str(val['strand']))
-	for val in startcodon:
-		temp.append(str(val['startcodon']))
-	for val in locus_tag:
-		temp.append(str(val['locus_tag']))
-	for val in sequence:
-		temp.append(str(val['sequence']))	
-	
-	prot_name_list = temp  
+	for i in range(0, len(organism)) :
+		temp = []
+		temp.append(str(organism[i]['organism']))	
+		temp.append(proc_acc_num)
+		temp.append(str(chrom_acc_num[i]['chrom_acc_num']))
+		temp.append(str(prot_description_list[i]['prot_description']))
+		temp.append(str(CDSstart[i]['CDSstart']))
+		temp.append(str(CDSend[i]['CDSend']))
+		temp.append(str(strand[i]['strand']))
+		temp.append(str(startcodon[i]['startcodon']))
+		temp.append(str(locus_tag[i]['locus_tag']))
+		temp.append(str(sequence[i]['sequence']))	
+		prot_name_list.append(temp)   
 
 	return render(request, 'UGP/prot_acc_bacteria.html', {'prot_name_list': prot_name_list}) 
 
@@ -238,31 +228,21 @@ def proc_acc_archaea(request, proc_acc_num):
 	locus_tag = ArchaeaTable.objects.all().filter(prot_acc = proc_acc_num).values('locus_tag')
 	sequence = ArchaeaTable.objects.all().filter(prot_acc = proc_acc_num).values('sequence')
 
-	temp = []
+	prot_name_list = []
 
-	for val in organism:
-		temp.append(str(val['organism']))
-	
-	temp.append(proc_acc_num)
-
-	for val in chrom_acc_num:
-		temp.append(str(val['chrom_acc_num']))
-	for val in prot_description_list:
-		temp.append(str(val['prot_description']))
-	for val in CDSstart:
-		temp.append(str(val['CDSstart']))
-	for val in CDSend:
-		temp.append(str(val['CDSend']))
-	for val in strand:
-		temp.append(str(val['strand']))
-	for val in startcodon:
-		temp.append(str(val['startcodon']))
-	for val in locus_tag:
-		temp.append(str(val['locus_tag']))
-	for val in sequence:
-		temp.append(str(val['sequence']))	
-	
-	prot_name_list = temp  
+	for i in range(0, len(organism)) :
+		temp = []
+		temp.append(str(organism[i]['organism']))	
+		temp.append(proc_acc_num)
+		temp.append(str(chrom_acc_num[i]['chrom_acc_num']))
+		temp.append(str(prot_description_list[i]['prot_description']))
+		temp.append(str(CDSstart[i]['CDSstart']))
+		temp.append(str(CDSend[i]['CDSend']))
+		temp.append(str(strand[i]['strand']))
+		temp.append(str(startcodon[i]['startcodon']))
+		temp.append(str(locus_tag[i]['locus_tag']))
+		temp.append(str(sequence[i]['sequence']))	
+		prot_name_list.append(temp)  
 
 	return render(request, 'UGP/prot_acc_archaea.html', {'prot_name_list': prot_name_list}) 	
 
