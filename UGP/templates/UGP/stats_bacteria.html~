@@ -1,0 +1,42 @@
+{% extends 'UGP/base.html' %}
+{% load static from staticfiles %}
+
+{% block content %}
+
+<h4><font color="black" face="georgia"> Biological Processes Of Non AUG Codon Proteins</font> </h4>
+<img src="/static/bacteria_bioproc.png" alt="Organism Distribution" style="width:600px;height:400px;">
+<br>
+<br>
+<br>
+<br>
+<h4> <font color="black" face="georgia">Cellular Components For Non AUG Codon Proteins</font> </h4>
+<img src="/static/bacteria_cellcomp.png" alt="Classification" style="width:600px;height:400px;">
+<br>
+<br>
+<br>
+<br>
+<h4> <font color="black" face="georgia">Distribution of Bacterial Species According To Presence Of Non AUG Codons</font> </h4>
+<img src="/static/bacteria_dist.png" alt="Classification" style="width:600px;height:400px;">
+<br>
+<br>
+<br>
+<br>
+<h4> <font color="black" face="georgia">Molecular Function For Non AUG Codon Proteins</font> </h4>
+<img src="/static/bacteria_molfunct.png" alt="Classification" style="width:600px;height:400px;">
+<br>
+<br>
+<br>
+<br>
+<h4> <font color="black" face="georgia">Codon-wise Distribution</font> </h4>
+<img src="/static/bacteria_nonaugdist.png" alt="Classification" style="width:600px;height:400px;">
+<br>
+<br>
+<br>
+<br>
+<h4> <font color="black" face="georgia">Non AUG Protein Categories</font> </h4>
+<img src="/static/bacteria_protcat.png" alt="Classification" style="width:600px;height:400px;">
+<br>
+<br>
+<a href="/"><font face="georgia"> Back to Home </font></a>
+
+{% endblock %}

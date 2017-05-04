@@ -1,0 +1,17 @@
+{% extends 'UGP/base.html' %}
+
+{% block content %}
+
+	<h1><font face="georgia"> Enter Start Codon </font></h1>
+	<form id="codon_form" method="post" action="/codon_archaea/dummy/">
+		{% csrf_token %}
+		<font face="georgia">Start Codon: </font><input type="text" name="codon" value="" size="50" /> 
+		<br />
+		<br>
+ 	<input type="submit" value="submit" class="btn btn-success"/>
+	</form>
+	<br>
+<br>
+<a href="/"><font face="georgia"> Back to Home </font></a>
+
+{% endblock %}

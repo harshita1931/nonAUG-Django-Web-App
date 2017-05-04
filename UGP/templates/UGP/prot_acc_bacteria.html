@@ -10,23 +10,23 @@
 			<td> <font face="georgia">{{ protinfo.0 }} </font></td>
 		</tr>
 		<tr>
-			<td> <font face="georgia">Protein Accession Number</font> </td>
+			<td> <font face="georgia">Protein Name</font> </td>
 			<td><font face="georgia"> {{ protinfo.1 }} </font></td>
 		</tr>
 		<tr>
 			<td><font face="georgia">  Protein Description</font></td>
-			<td> <font face="georgia">{{ protinfo.3 }} </font></td>
+			<td> <font face="georgia">{{ protinfo.2 }} </font></td>
 		</tr>
 		<tr>
-			<td><font face="georgia"> Chromosome Accession Number</font> </td>
-			<td> <a href="/chrom_acc_bacteria/{{ protinfo.2 }}"><font face="georgia">{{ protinfo.2 }}</font> </td>
+			<td><font face="georgia"> Start Codon</font> </td>
+			<td> <font face="georgia">{{ protinfo.3 }}</font> </td>
 		</tr>
 		<tr>
-			<td><font face="georgia"> CDS Start </font> </td>
+			<td><font face="georgia"> Start Site </font> </td>
 			<td> <font face="georgia">{{ protinfo.4 }} </font></td>
 		</tr>
 		<tr>
-			<td> <font face="georgia">CDS End</font> </td>
+			<td> <font face="georgia">Stop Site</font> </td>
 			<td> <font face="georgia">{{ protinfo.5 }}</font> </td>
 		</tr>
 		<tr>
@@ -34,16 +34,45 @@
 			<td> <font face="georgia">{{ protinfo.6 }} </font></td>
 		</tr>
 		<tr>
-			<td> <font face="georgia">Start Codon</font> </td>
+			<td> <font face="georgia">Protein Function</font> </td>
 			<td><font face="georgia"> {{ protinfo.7 }}</font> </td>
 		</tr>
 		<tr>
-			<td><font face="georgia"> Locus Tag</font> </td>
-			<td> <font face="georgia">{{ protinfo.8 }}</font> </td>
+			<td><font face="georgia"> Molecular Function</font> </td>
+			<td> <font face="georgia">{{ protinfo.8 }}</font> </td> 
+			
 		</tr>
 		<tr>
-			<td> <font face="georgia">Protein Sequence </font> </td>
+			<td> <font face="georgia">Biological Process </font> </td>
 			<td> <font face="georgia"> {{ protinfo.9 }}</font> </td>
+		</tr>
+		<tr>
+			<td> <font face="georgia">Cellular Component </font> </td>
+			<td> <font face="georgia"> {{ protinfo.10 }}</font> </td>
+		</tr>
+		<tr>
+			<td> <font face="georgia">PDB ID </font> </td>
+			<td> <a href="http://www.ebi.ac.uk/pdbe/entry/pdb/{{ protinfo.11 }}"><font face="georgia"> {{ protinfo.11 }}</font> </td>
+		</tr>
+		<tr>
+			<td> <font face="georgia">Swiss Prot ID </font> </td>
+			<td> <font face="georgia"> {{ protinfo.12 }}</font> </td>
+		</tr>
+		<tr>
+			<td> <font face="georgia">Swiss Prot Accession ID </font> </td>
+			<td> <a href="http://www.uniprot.org/uniprot/{{ protinfo.13 }}"><font face="georgia"> {{ protinfo.13 }}</font> </td>
+		</tr>
+		<tr>
+			<td> <font face="georgia">NCBI Genome Accession/ EnsemblBacteria Gene ID </font> </td>
+			<td>  <a href="{{ protinfo.16 }}{{ protinfo.14 }}"><font face="georgia">{{ protinfo.14 }} </font> </td>
+		</tr>
+		<tr>
+			<td> <font face="georgia">NCBI Protein Accession/ EnsemblBacteria Protein ID </font> </td>
+			<td> <a href="{{ protinfo.17 }}{{ protinfo.15 }}"><font face="georgia"> {{ protinfo.15 }}</font> </td>
+		</tr>
+		<tr>
+			<td> <font face="georgia">Link to Fasta </font> </td>
+			<td> <a href="http://www.uniprot.org/uniprot/{{ protinfo.13 }}.fasta"><font face="georgia"> Click Here</font> </td>
 		</tr>
 	</table>
 	<br>
