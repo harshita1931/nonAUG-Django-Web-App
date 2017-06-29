@@ -87,4 +87,31 @@ class BacteriaTableNew1(models.Model):
 
 
     def __str__(self):
-        return self.s_no      
+        return self.s_no  
+
+  
+
+class EukaryotesTableNew2(models.Model):
+    GeneID = models.TextField(default='-', null=True, blank=True)
+    Refseq_mRNA_ID = models.TextField(default='-', null=True, blank=True)
+    Refseq_protein_ID = models.TextField(default='-', null=True, blank=True)
+    Organism = models.TextField(default='-', null=True, blank=True)
+    Gene_name = models.TextField(default='-', null=True, blank=True)
+    Gene_description = models.TextField(default='-', null=True, blank=True)
+    Protein_description = models.TextField(default='-', null=True, blank=True)
+    Transcript_name = models.TextField(default='-', null=True, blank=True)
+    Chromosome = models.TextField(default='-', null=True, blank=True)
+    Transcript_start = models.TextField(default='-', null=True, blank=True)
+    Transcript_end = models.TextField(default='-', null=True, blank=True)
+    Strand = models.TextField(default='-', null=True, blank=True)
+    Start_codon = models.TextField(default='-', null=True, blank=True)
+    UpstreamATG = models.TextField(default='-', null=True, blank=True)
+    Protein_function = models.TextField(default='-', null=True, blank=True)
+    UniprotSwissprotID = models.TextField(default='-', null=True, blank=True)
+    PDB_ID = models.TextField(default='-', null=True, blank=True)
+    Biological_process = models.TextField(default='-', null=True, blank=True)
+    Cellular_component = models.TextField(default='-', null=True, blank=True)
+    Molecular_function = models.TextField(default='-', null=True, blank=True)
+
+    def __str__(self):
+        return self.s_no                      

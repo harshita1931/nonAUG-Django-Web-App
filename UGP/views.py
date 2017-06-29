@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import MainTable, BacteriaTableNew1, ArchaeaTableNew1
+from .models import EukaryotesTableNew2, BacteriaTableNew1, ArchaeaTableNew1
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
@@ -22,10 +22,10 @@ def first_page_archaea(request):
 
 
 def organism_form(request):
-	organism_name_list = MainTable.objects.all().values('organism').distinct()
+	organism_name_list = EukaryotesTableNew2.objects.all().values('Organism').distinct()
 	org_name = []
 	for i in range(0, len(organism_name_list)) :
-		name = str(organism_name_list[i]['organism'])
+		name = str(organism_name_list[i]['Organism'])
 		splitlist = name.split(" ")
 		finalname = splitlist[0] + " " + splitlist[1]
 		org_name.append(finalname)
@@ -172,41 +172,78 @@ def dummy_view_codon_archaea(request):
 
 
 def proc_acc(request, proc_acc_num):
-	proc_acc_num = str(proc_acc_num)
+	protID = str(proc_acc_num)
 
-	prot_name_list = MainTable.objects.all().filter(prot_acc = proc_acc_num).values('prot_name')	#this list contains names of proteins returned by the query
-	organism = MainTable.objects.all().filter(prot_acc = proc_acc_num).values('organism')
-	geneID = MainTable.objects.all().filter(prot_acc = proc_acc_num).values('geneID')
-	mRNA_acc_num =	MainTable.objects.all().filter(prot_acc = proc_acc_num).values('acc_num')
-	status = MainTable.objects.all().filter(prot_acc = proc_acc_num).values('status')
-	start_codon = MainTable.objects.all().filter(prot_acc = proc_acc_num).values('startcodon')
-	upstreamATGcount = MainTable.objects.all().filter(prot_acc = proc_acc_num).values('upstreamATG_count')
-	link = MainTable.objects.all().filter(prot_acc = proc_acc_num).values('mRNAfastalink')
-	desc = MainTable.objects.all().filter(prot_acc = proc_acc_num).values('description')
+	geneID = EukaryotesTableNew2.objects.all().filter(Refseq_protein_ID = protID).values('GeneID')	#this list contains names of proteins returned by the query
+	mRNA_ID = EukaryotesTableNew2.objects.all().filter(Refseq_protein_ID = protID).values('Refseq_mRNA_ID')
+	organism = EukaryotesTableNew2.objects.all().filter(Refseq_protein_ID = protID).values('Organism')
+	gene_name =	EukaryotesTableNew2.objects.all().filter(Refseq_protein_ID = protID).values('Gene_name')
+	gene_desc = EukaryotesTableNew2.objects.all().filter(Refseq_protein_ID = protID).values('Gene_description')
+	prot_desc = EukaryotesTableNew2.objects.all().filter(Refseq_protein_ID = protID).values('Protein_description')
+	transcript_name = EukaryotesTableNew2.objects.all().filter(Refseq_protein_ID = protID).values('Transcript_name')
+	chromosome = EukaryotesTableNew2.objects.all().filter(Refseq_protein_ID = protID).values('Chromosome')
+	transcript_start = EukaryotesTableNew2.objects.all().filter(Refseq_protein_ID = protID).values('Transcript_start')
+	transcript_end = EukaryotesTableNew2.objects.all().filter(Refseq_protein_ID = protID).values('Transcript_end')
+	strand = EukaryotesTableNew2.objects.all().filter(Refseq_protein_ID = protID).values('Strand')
+	codon = EukaryotesTableNew2.objects.all().filter(Refseq_protein_ID = protID).values('Start_codon')
+	upstreamATG = EukaryotesTableNew2.objects.all().filter(Refseq_protein_ID = protID).values('UpstreamATG')
+	prot_func = EukaryotesTableNew2.objects.all().filter(Refseq_protein_ID = protID).values('Protein_function')
+	uniprot_swissprot_ID = EukaryotesTableNew2.objects.all().filter(Refseq_protein_ID = protID).values('UniprotSwissprotID')
+	pdbID = EukaryotesTableNew2.objects.all().filter(Refseq_protein_ID = protID).values('PDB_ID')
+	bioproc = EukaryotesTableNew2.objects.all().filter(Refseq_protein_ID = protID).values('Biological_process')
+	cellcomp = EukaryotesTableNew2.objects.all().filter(Refseq_protein_ID = protID).values('Cellular_component')
+	molfunc = EukaryotesTableNew2.objects.all().filter(Refseq_protein_ID = protID).values('Molecular_function')
 
 	temp = []
-	for val in prot_name_list:
-		temp.append(str(val['prot_name']))
-	for val in organism:
-		temp.append(str(val['organism']))
+	temp.append(protID)
 	for val in geneID:
-		temp.append(str(val['geneID']))
-	for val in mRNA_acc_num:
-		temp.append(str(val['acc_num']))
-	for val in status:
-		temp.append(str(val['status']))
-	for val in start_codon:
-		temp.append(str(val['startcodon']))
-	for val in upstreamATGcount:
-		temp.append(str(val['upstreamATG_count']))
-	for val in link:
-		temp.append(str(val['mRNAfastalink']))
-	for val in desc:
-		temp.append(str(val['description']))
-	temp.append(proc_acc_num)
+		temp.append(str(val['GeneID']))
+	for val in mRNA_ID:
+		temp.append(str(val['Refseq_mRNA_ID']))
+	for val in organism:
+		temp.append(str(val['Organism']))
+	for val in gene_name:
+		temp.append(str(val['Gene_name']))
+	for val in gene_desc:
+		temp.append(str(val['Gene_description']))
+	for val in prot_desc:
+		temp.append(str(val['Protein_description']))	
+	for val in transcript_name:
+		temp.append(str(val['Transcript_name']))
+	for val in chromosome:
+		temp.append(str(val['Chromosome']))
+	for val in transcript_start:
+		temp.append(str(val['Transcript_start']))
+	for val in transcript_end:
+		temp.append(str(val['Transcript_end']))
+	for val in strand:
+		temp.append(str(val['Strand']))
+	for val in codon:
+		temp.append(str(val['Start_codon']))
+	for val in upstreamATG:
+		temp.append(str(val['UpstreamATG']))
+	for val in prot_func:
+		temp.append(str(val['Protein_function']))
+	for val in uniprot_swissprot_ID:
+		temp.append(str(val['UniprotSwissprotID']))
+	for val in pdbID:
+		pdb_list = (str(val['PDB_ID'])).split('; ')
+		temp.append(pdb_list)
+		# print pdb_list
+		#temp.append(str(val['PDB_ID']))
+	for val in bioproc:
+		bioproc_list = (str(val['Biological_process'])).split('; ')
+		temp.append(bioproc_list)	
+	for val in cellcomp:
+		cellcomp_list = str(val['Cellular_component']).split('; ')
+		temp.append(cellcomp_list)
+	for val in molfunc:
+		molfunc_list = str(val['Molecular_function']).split('; ')
+		temp.append(molfunc_list)								
+	
 	prot_name_list = temp
 
-	return render(request, 'UGP/prot_acc.html', {'prot_name_list': prot_name_list})
+	return render(request, 'UGP/prot_acc.html', {'prot_name_list': prot_name_list, 'pdb_list':pdb_list, 'bioproc_list':bioproc_list, 'cellcomp_list':cellcomp_list, 'molfunc_list':molfunc_list})
 
 
 
@@ -390,17 +427,17 @@ def chrom_acc_archaea(request, chrom_acc_num):
 def organism(request, org_name):
 	nameparts = org_name.split("_")
 	org_name = nameparts[0]+" "+nameparts[1]
-	prot_acc_list = MainTable.objects.all().filter(~Q(startcodon='ATG'), organism = org_name).values('prot_acc')  #this is the list of objects returned by the query having all prot_acc values
-	prot_name_list = MainTable.objects.all().filter( ~Q(startcodon='ATG'), organism = org_name).values('prot_name')	#this list contains names of proteins returned by the query
+	prot_acc_list = EukaryotesTableNew2.objects.all().filter(~Q(Start_codon='ATG'), Organism = org_name).values('Refseq_protein_ID')  #this is the list of objects returned by the query having all prot_acc values
+	prot_name_list = EukaryotesTableNew2.objects.all().filter( ~Q(Start_codon='ATG'), Organism = org_name).values('Protein_description')	#this list contains names of proteins returned by the query
 
 	temp = []
 	for protacc in prot_acc_list:
-		temp.append(str(protacc['prot_acc']))
+		temp.append(str(protacc['Refseq_protein_ID']))
 	prot_acc_list = temp
 
 	temp = []
 	for protname in prot_name_list:
-		temp.append(str(protname['prot_name']))
+		temp.append(str(protname['Protein_description']))
 	prot_name_list = temp
 
 	renderdict = {}		#the dictionary having prot_acc as key and protein name as value
@@ -461,12 +498,12 @@ def organism_archaea(request, org_name):
 
 
 
-def geneID(request, geneID_num):
+def geneID(request, geneID_num):  #not used in the newest database version
 	geneID_num = str(geneID_num)
-	ATG_isoform_protacc_list = MainTable.objects.all().filter(startcodon='ATG', geneID=geneID_num).values('prot_acc')
-	ATG_isoform_protname_list = MainTable.objects.all().filter(startcodon='ATG', geneID=geneID_num).values('prot_name')
-	nonATG_isoform_protacc_list = MainTable.objects.all().filter(~Q(startcodon='ATG'), geneID=geneID_num).values('prot_acc')
-	nonATG_isoform_protname_list = MainTable.objects.all().filter(~Q(startcodon='ATG'), geneID=geneID_num).values('prot_name')
+	ATG_isoform_protacc_list = EukaryotesTableNew2.objects.all().filter(startcodon='ATG', geneID=geneID_num).values('prot_acc')
+	ATG_isoform_protname_list = EukaryotesTableNew2.objects.all().filter(startcodon='ATG', geneID=geneID_num).values('prot_name')
+	nonATG_isoform_protacc_list = EukaryotesTableNew2.objects.all().filter(~Q(startcodon='ATG'), geneID=geneID_num).values('prot_acc')
+	nonATG_isoform_protname_list = EukaryotesTableNew2.objects.all().filter(~Q(startcodon='ATG'), geneID=geneID_num).values('prot_name')
 
 	temp = []
 	for protacc in ATG_isoform_protacc_list:
@@ -505,18 +542,18 @@ def geneID(request, geneID_num):
 
 def codon(request, codon):
 	codon = str(codon)
-	org_list = MainTable.objects.all().filter(startcodon=codon).values('organism')
-	protacc_list = MainTable.objects.all().filter(startcodon=codon).values('prot_acc')
+	org_list = EukaryotesTableNew2.objects.all().filter(Start_codon=codon).values('Organism')
+	protacc_list = EukaryotesTableNew2.objects.all().filter(Start_codon=codon).values('Refseq_protein_ID')
 	
 
 	temp = []
 	for protacc in protacc_list:
-		temp.append(str(protacc['prot_acc']))
+		temp.append(str(protacc['Refseq_protein_ID']))
 	protacc_list = temp
 
 	temp = []
 	for org in org_list:
-		temp.append(str(org['organism']))
+		temp.append(str(org['Organism']))
 	org_list = temp
 
 
@@ -587,24 +624,24 @@ def codon_archaea(request, codon):
 
 
 def browse(request):
-	prot_acc_list = MainTable.objects.all().filter(~Q(startcodon='ATG')).values('prot_acc')  #this is the list of objects returned by the query having all prot_acc values
-	prot_name_list = MainTable.objects.all().filter( ~Q(startcodon='ATG')).values('prot_name')	#this list contains names of proteins returned by the query
-	organism_name_list = MainTable.objects.all().filter(~Q(startcodon='ATG')).values('organism')
+	prot_acc_list = EukaryotesTableNew2.objects.all().filter(~Q(Start_codon='ATG')).values('Refseq_protein_ID')  #this is the list of objects returned by the query having all prot_acc values
+	prot_name_list = EukaryotesTableNew2.objects.all().filter( ~Q(Start_codon='ATG')).values('Protein_description')	#this list contains names of proteins returned by the query
+	organism_name_list = EukaryotesTableNew2.objects.all().filter(~Q(Start_codon='ATG')).values('Organism')
 
 	temp = []
 	for protacc in prot_acc_list:
-		temp.append(str(protacc['prot_acc']))
+		temp.append(str(protacc['Refseq_protein_ID']))
 	prot_acc_list = temp
 
 	temp = []
 	for protname in prot_name_list:
-		temp.append(str(protname['prot_name']))
+		temp.append(str(protname['Protein_description']))
 	prot_name_list = temp
 
 
 	temp = []
 	for orgname in organism_name_list:
-		temp.append(str(orgname['organism']))
+		temp.append(str(orgname['Organism']))
 	organism_name_list = temp
 
 	template_list = []

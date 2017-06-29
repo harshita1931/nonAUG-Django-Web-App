@@ -4,45 +4,111 @@
 
 <table border="1" style="width:100%">
 	<tr>
-		<td style="width:30%"><font face="georgia"> Name</font> </td>
-		<td> <font face="georgia">{{ prot_name_list.0 }} </font></td>
+		<td style="width:30%"><font face="georgia"> Refseq Protein ID</font> </td>
+		<td> <font face="georgia"><a href="https://www.ncbi.nlm.nih.gov/protein/{{ prot_name_list.0 }}" target="_blank"> {{ prot_name_list.0 }}</a></font></td>
 	</tr>
 	<tr>
-		<td> <font face="georgia">Protein Accession Number</font> </td>
-		<td><font face="georgia"> {{ prot_name_list.9 }} </font></td>
+		<td> <font face="georgia">Gene ID</font> </td>
+		<td><font face="georgia"> <a href="https://www.ncbi.nlm.nih.gov/gene?cmd=Retrieve&dopt=Graphics&list_uids={{ prot_name_list.1 }}" target="_blank">{{ prot_name_list.1 }}</a> </font></td>
 	</tr>
 	<tr>
-		<td><font face="georgia"> Organism name </font></td>
-		<td> <font face="georgia">{{ prot_name_list.1 }} </font></td>
+		<td><font face="georgia"> Refseq mRNA ID </font></td>
+		<td> <font face="georgia"><a href="https://www.ncbi.nlm.nih.gov/nuccore/{{ prot_name_list.2 }}" target="_blank">{{ prot_name_list.2 }} </a></font></td>
 	</tr>
 	<tr>
-		<td><font face="georgia"> Gene ID</font> </td>
-		<td> <a href="https://www.ncbi.nlm.nih.gov/gene/?term={{ prot_name_list.2 }}"><font face="georgia">{{ prot_name_list.2 }}</font> </td>
+		<td><font face="georgia"> Organism Name</font> </td>
+		<td><font face="georgia">{{ prot_name_list.3 }} </font> </td>
 	</tr>
 	<tr>
-		<td><font face="georgia"> mRNA Accession ID </font> </td>
-		<td> <font face="georgia">{{ prot_name_list.3 }} </font></td>
+		<td><font face="georgia"> Gene Name </font> </td>
+		<td> <font face="georgia">{{ prot_name_list.4 }} </font></td>
 	</tr>
 	<tr>
-		<td> <font face="georgia">Status</font> </td>
-		<td> <font face="georgia">{{ prot_name_list.4 }}</font> </td>
+		<td> <font face="georgia">Gene Description</font> </td>
+		<td> <font face="georgia">{{ prot_name_list.5 }}</font> </td>
 	</tr>
 	<tr>
-		<td><font face="georgia"> Start Codon </font> </td>
-		<td> <font face="georgia">{{ prot_name_list.5 }} </font></td>
+		<td> <font face="georgia">Protein Description</font> </td>
+		<td> <font face="georgia">{{ prot_name_list.6 }}</font> </td>
+	</tr>
+
+	<tr>
+		<td><font face="georgia"> Transcript Name </font> </td>
+		<td> <font face="georgia">{{ prot_name_list.7 }} </font></td>
 	</tr>
 	<tr>
-		<td> <font face="georgia">Upstream ATG count</font> </td>
-		<td><font face="georgia"> {{ prot_name_list.6 }}</font> </td>
+		<td> <font face="georgia">Chromosome</font> </td>
+		<td><font face="georgia"> {{ prot_name_list.8 }}</font> </td>
 	</tr>
 	<tr>
-		<td><font face="georgia"> Description</font> </td>
-		<td> <font face="georgia">{{ prot_name_list.8 }}</font> </td>
+		<td><font face="georgia"> Transcript Start</font> </td>
+		<td> <font face="georgia">{{ prot_name_list.9 }}</font> </td>
 	</tr>
 	<tr>
-		<td> <font face="georgia">Link to FASTA file </font> </td>
-		<td> <a href="{{ prot_name_list.7 }}"><font face="georgia"> Fasta</font> </a></td>
+		<td> <font face="georgia">Transcript End </font> </td>
+		<td> <font face="georgia"> {{ prot_name_list.10 }}</font> </td>
 	</tr>
+	<tr>
+		<td> <font face="georgia">Strand </font> </td>
+		<td> <font face="georgia"> {{ prot_name_list.11 }}</font> </td>
+	</tr>
+	<tr>
+		<td> <font face="georgia">Start Codon </font> </td>
+		<td> <font face="georgia"> {{ prot_name_list.12 }}</font> </td>
+	</tr>
+	<tr>
+		<td> <font face="georgia">Upstream ATG Count</font> </td>
+		<td> <font face="georgia"> {{ prot_name_list.13 }}</font> </td>
+	</tr>
+	<tr>
+		<td> <font face="georgia">Protein Function </font> </td>
+		<td> <font face="georgia"> {{ prot_name_list.14 }}</font> </td>
+	</tr>
+	<tr>
+		<td> <font face="georgia">Uniprot/Swissprot ID </font> </td>
+		<td> <font face="georgia"> <a href="http://www.uniprot.org/uniprot/{{ prot_name_list.15 }}" target="_blank">{{ prot_name_list.15 }}</a></font> </td>
+	</tr>
+	<tr>
+		<td> <font face="georgia">PDB ID </font> </td>
+		<td> 
+			
+			{% for i in pdb_list %}
+				<font face="georgia"> <a href="http://www.ebi.ac.uk/pdbe/entry/pdb/{{ i }}" target="_blank">{{ i }}</a></font> 
+			{% endfor %}
+				
+		</td>
+	</tr>
+	<tr>
+		<td> <font face="georgia">Biological Processes </font> </td>
+		<td> 
+			
+			{% for i in bioproc_list %}
+				<font face="georgia"> <a href="http://amigo.geneontology.org/amigo/term/{{ i }}" target="_blank">{{ i }}</a></font> 
+			{% endfor %}
+				
+		</td>
+	</tr>
+	<tr>
+		<td> <font face="georgia">Cell Components </font> </td>
+		<td> 
+			
+			{% for i in cellcomp_list %}
+				<font face="georgia"> <a href="http://amigo.geneontology.org/amigo/term/{{ i }}" target="_blank">{{ i }}</a></font> 
+			{% endfor %}
+				
+		</td>
+	</tr>
+	<tr>
+		<td> <font face="georgia">Molecular Functions </font> </td>
+		<td> 
+			
+			{% for i in molfunc_list %}
+				<font face="georgia"> <a href="http://amigo.geneontology.org/amigo/term/{{ i }}" target="_blank">{{ i }}</a></font> 
+			{% endfor %}
+				
+		</td>
+	</tr>
+	
 </table>
 <br>
 <br>
