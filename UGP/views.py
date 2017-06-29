@@ -498,12 +498,12 @@ def organism_archaea(request, org_name):
 
 
 
-def geneID(request, geneID_num):  #not used in the newest database version
+def geneID(request, geneID_num):  #not used in the newest database version; and is slightly wrong
 	geneID_num = str(geneID_num)
-	ATG_isoform_protacc_list = EukaryotesTableNew2.objects.all().filter(startcodon='ATG', geneID=geneID_num).values('prot_acc')
-	ATG_isoform_protname_list = EukaryotesTableNew2.objects.all().filter(startcodon='ATG', geneID=geneID_num).values('prot_name')
-	nonATG_isoform_protacc_list = EukaryotesTableNew2.objects.all().filter(~Q(startcodon='ATG'), geneID=geneID_num).values('prot_acc')
-	nonATG_isoform_protname_list = EukaryotesTableNew2.objects.all().filter(~Q(startcodon='ATG'), geneID=geneID_num).values('prot_name')
+	ATG_isoform_protacc_list = EukaryotesTableNew2.objects.all().filter(Start_codon='ATG', GeneID=geneID_num).values('prot_acc')
+	ATG_isoform_protname_list = EukaryotesTableNew2.objects.all().filter(Start_codon='ATG', GeneID=geneID_num).values('prot_name')
+	nonATG_isoform_protacc_list = EukaryotesTableNew2.objects.all().filter(~Q(Start_codon='ATG'), GeneID=geneID_num).values('prot_acc')
+	nonATG_isoform_protname_list = EukaryotesTableNew2.objects.all().filter(~Q(Start_codon='ATG'), GeneID=geneID_num).values('prot_name')
 
 	temp = []
 	for protacc in ATG_isoform_protacc_list:
