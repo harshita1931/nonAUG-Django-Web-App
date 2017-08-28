@@ -41,7 +41,7 @@ def organism_form_bacteria(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 
 		finalname = splitlist[0] + " " + splitlist[1]
@@ -59,7 +59,7 @@ def organism_form_archaea(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 
 		finalname = splitlist[0] + " " + splitlist[1]
@@ -763,7 +763,7 @@ def browse_name_bacteria(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -776,7 +776,7 @@ def browse_name_bacteria(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -789,7 +789,7 @@ def browse_name_bacteria(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -802,7 +802,7 @@ def browse_name_bacteria(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -815,7 +815,7 @@ def browse_name_bacteria(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.'  :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -828,7 +828,7 @@ def browse_name_bacteria(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -841,7 +841,7 @@ def browse_name_bacteria(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -854,7 +854,7 @@ def browse_name_bacteria(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -867,7 +867,7 @@ def browse_name_bacteria(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -880,7 +880,7 @@ def browse_name_bacteria(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -893,7 +893,7 @@ def browse_name_bacteria(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -906,7 +906,7 @@ def browse_name_bacteria(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -919,7 +919,7 @@ def browse_name_bacteria(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -932,7 +932,7 @@ def browse_name_bacteria(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -945,7 +945,7 @@ def browse_name_bacteria(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -958,7 +958,7 @@ def browse_name_bacteria(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -971,7 +971,7 @@ def browse_name_bacteria(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -984,7 +984,7 @@ def browse_name_bacteria(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -997,7 +997,7 @@ def browse_name_bacteria(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1010,7 +1010,7 @@ def browse_name_bacteria(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1023,7 +1023,7 @@ def browse_name_bacteria(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1036,7 +1036,7 @@ def browse_name_bacteria(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1049,7 +1049,7 @@ def browse_name_bacteria(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1062,7 +1062,7 @@ def browse_name_bacteria(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1075,7 +1075,7 @@ def browse_name_bacteria(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1088,7 +1088,7 @@ def browse_name_bacteria(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1131,7 +1131,7 @@ def browse_name_archaea(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1144,7 +1144,7 @@ def browse_name_archaea(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1157,7 +1157,7 @@ def browse_name_archaea(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1170,7 +1170,7 @@ def browse_name_archaea(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1183,7 +1183,7 @@ def browse_name_archaea(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1196,7 +1196,7 @@ def browse_name_archaea(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1209,7 +1209,7 @@ def browse_name_archaea(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1222,7 +1222,7 @@ def browse_name_archaea(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1235,7 +1235,7 @@ def browse_name_archaea(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1248,7 +1248,7 @@ def browse_name_archaea(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1261,7 +1261,7 @@ def browse_name_archaea(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1274,7 +1274,7 @@ def browse_name_archaea(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1287,7 +1287,7 @@ def browse_name_archaea(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1300,7 +1300,7 @@ def browse_name_archaea(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1313,7 +1313,7 @@ def browse_name_archaea(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1326,7 +1326,7 @@ def browse_name_archaea(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1339,7 +1339,7 @@ def browse_name_archaea(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1352,7 +1352,7 @@ def browse_name_archaea(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1365,7 +1365,7 @@ def browse_name_archaea(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1378,7 +1378,7 @@ def browse_name_archaea(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1391,7 +1391,7 @@ def browse_name_archaea(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1404,7 +1404,7 @@ def browse_name_archaea(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1417,7 +1417,7 @@ def browse_name_archaea(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1430,7 +1430,7 @@ def browse_name_archaea(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1443,7 +1443,7 @@ def browse_name_archaea(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
@@ -1456,7 +1456,7 @@ def browse_name_archaea(request):
 		splitlist = name.split(" ")
 		if splitlist[0][0] == '[' :
 			splitlist[0] = splitlist[0][1:]
-		if splitlist[1][-1] == ']' :
+		if splitlist[1][-1] == ']' or splitlist[1][-1] == '.' :
 			splitlist[1] = 	splitlist[1][:-1]
 		finalname = splitlist[0] + " " + splitlist[1]
 		finalurlname = splitlist[0]+"_"+splitlist[1]
