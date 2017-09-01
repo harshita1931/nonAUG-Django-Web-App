@@ -8,14 +8,14 @@ import csv
 conn = sqlite3.connect('db.sqlite3')
 print ("opened database successfully")
 
-wb = openpyxl.load_workbook('Bacteria_analysis.xlsx')
-sheet = wb.get_sheet_by_name('Sheet1')
+wb = openpyxl.load_workbook('bacteria_after_seq_cluster_analysis.xlsx')
+sheet = wb.get_sheet_by_name('after_remove_seq_duplicates')
 
 
 inp = []
 temp = []
 
-for rows in range(2, 43051):
+for rows in range(2, 31214):
 	sno = rows-1
 	temp.append(sno)
 	SwissProtID = sheet.cell(row = rows, column = 1).value
@@ -50,10 +50,12 @@ for rows in range(2, 43051):
 	temp.append(CellComp)
 	PDB_ID = sheet.cell(row = rows, column = 16).value
 	temp.append(PDB_ID)
+	TaxaID = sheet.cell(row = rows, column = 17).value
+	temp.append(TaxaID)
 	inp.append(temp)
 	temp = []
 
-conn.executemany("INSERT INTO ugp_bacteriatablenew1 VALUES (?,?,?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?)", inp)
+conn.executemany("INSERT INTO ugp_bacteriatablenew1 VALUES (?,?,?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?)", inp)
 conn.commit()
 
 print ("Records created successfully")

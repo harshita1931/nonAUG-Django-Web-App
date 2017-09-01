@@ -10,6 +10,10 @@
 			<td> <font face="georgia">{{ protinfo.0 }} </font></td>
 		</tr>
 		<tr>
+			<td><font face="georgia"> Taxa ID</font> </td>
+			<td> <font face="georgia">{{ protinfo.18 }}</font> </td>
+		</tr>
+		<tr>
 			<td> <font face="georgia">Protein Name</font> </td>
 			<td><font face="georgia"> {{ protinfo.1 }} </font></td>
 		</tr>
@@ -74,6 +78,7 @@
 			<td> <font face="georgia">Link to Fasta </font> </td>
 			<td> <a href="http://www.uniprot.org/uniprot/{{ protinfo.13 }}.fasta"><font face="georgia"> Click Here</font> </td>
 		</tr>
+		
 	</table>
 	<br>
 {% endfor %}

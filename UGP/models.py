@@ -62,6 +62,7 @@ class ArchaeaTableNew1(models.Model):
     BioProc = models.TextField(default='-', null=True, blank=True)
     CellComp = models.TextField(default='-', null=True, blank=True)
     PDB_ID = models.TextField(default='-', null=True, blank=True)
+    TaxaID = models.TextField(default='-', null=True, blank=True)
 
 
     def __str__(self):
@@ -84,6 +85,7 @@ class BacteriaTableNew1(models.Model):
     BioProc = models.TextField(default='-', null=True, blank=True)
     CellComp = models.TextField(default='-', null=True, blank=True)
     PDB_ID = models.TextField(default='-', null=True, blank=True)
+    TaxaID = models.TextField(default='-', null=True, blank=True)
 
 
     def __str__(self):

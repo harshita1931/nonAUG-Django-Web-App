@@ -264,6 +264,7 @@ def proc_acc_bacteria(request, proc_acc_num):
     	bioproc = BacteriaTableNew1.objects.all().filter(ProtAcc_ProtID = protacc_protid).values('BioProc')
     	cellcomp = BacteriaTableNew1.objects.all().filter(ProtAcc_ProtID = protacc_protid).values('CellComp')
     	pdb_id = BacteriaTableNew1.objects.all().filter(ProtAcc_ProtID = protacc_protid).values('PDB_ID')
+    	taxa_id = BacteriaTableNew1.objects.all().filter(ProtAcc_ProtID = protacc_protid).values('TaxaID')
 	ids = BacteriaTableNew1.objects.all().filter(ProtAcc_ProtID = protacc_protid).values('id')
 
 	prot_name_list = []
@@ -299,6 +300,7 @@ def proc_acc_bacteria(request, proc_acc_num):
 			temp.append("https://www.ncbi.nlm.nih.gov/protein/")
 		else:
 			temp.append("http://bacteria.ensembl.org/Multi/Search/Results?species=all;idx=;q=")
+		temp.append(str(taxa_id[i]['TaxaID']))
 		prot_name_list.append(temp)
 
 		print ("size of molfuncts is "+str(len(molfuncts)))
@@ -325,6 +327,7 @@ def proc_acc_archaea(request, proc_acc_num):
     	bioproc = ArchaeaTableNew1.objects.all().filter(ProtAcc_ProtID = protacc_protid).values('BioProc')
     	cellcomp = ArchaeaTableNew1.objects.all().filter(ProtAcc_ProtID = protacc_protid).values('CellComp')
     	pdb_id = ArchaeaTableNew1.objects.all().filter(ProtAcc_ProtID = protacc_protid).values('PDB_ID')
+    	taxa_id = ArchaeaTableNew1.objects.all().filter(ProtAcc_ProtID = protacc_protid).values('TaxaID')
 	ids = ArchaeaTableNew1.objects.all().filter(ProtAcc_ProtID = protacc_protid).values('id')
 
 	prot_name_list = []
@@ -360,6 +363,7 @@ def proc_acc_archaea(request, proc_acc_num):
 			temp.append("https://www.ncbi.nlm.nih.gov/protein/")
 		else:
 			temp.append("http://bacteria.ensembl.org/Multi/Search/Results?species=all;idx=;q=")
+		temp.append(str(taxa_id[i]['TaxaID']))
 		prot_name_list.append(temp)
 
 		print ("size of molfuncts is "+str(len(molfuncts)))
